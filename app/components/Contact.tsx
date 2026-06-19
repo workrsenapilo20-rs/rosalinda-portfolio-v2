@@ -39,7 +39,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center bg-surface border border-border rounded-lg px-8 py-14 max-w-6xl mx-auto">
                     <div>
                         <h2 className="text-3xl md:text-[48px] font-bold text-text">
-                            I Am Available For Freelance.
+                            I Am Available For <span className="text-accent-dark">Freelance</span>.
                         </h2>
                         <p className="text-muted mt-4 text-base md:text-base leading-relaxed">
                             I&apos;m always open to discussing new projects, creative ideas, and opportunities to bring your vision to life. Feel free to get in touch.

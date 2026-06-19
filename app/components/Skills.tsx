@@ -14,6 +14,7 @@ const SKILL_GROUPS: Skill[][] = [
   [
     { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "Next.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", invert: true },
+    { name: "TypeScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"},
     { name: "Tailwind CSS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
     { name: "HTML5", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "CSS3", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
@@ -49,7 +50,7 @@ export default function Skills() {
     <section id="skills" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25">
       <Container>
         <h2 className="text-3xl md:text-[48px] font-bold text-text">
-          Tools and technologies I work with.
+          <span className="text-accent-dark">Tools</span> and <span className="text-accent-dark">Technologies</span> I work with
         </h2>
         <div className="mt-10 flex flex-col gap-6">
             {SKILL_GROUPS.map((group, groupIndex) => (
@@ -65,7 +66,7 @@ export default function Skills() {
                 {duplicateForLoop(group).map((skill, i) => (
                     <div
                     key={`${skill.name}-${i}`}
-                    className="flex  items-center justify-center gap-2 shrink-0 w-[250px]  rounded-md border border-border bg-panel p-5"
+                    className="flex  items-center justify-center gap-2 shrink-0 w-[250px] rounded-md border border-border bg-panel p-5 hover:bg-surface-strong hover:border-accent-dark transition-colors duration-200 group cursor-pointer"
                     >
                     <Image
                         src={skill.src}
