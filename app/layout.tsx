@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";  // ← add this
 import Footer from "./components/Footer";
+import CursorSpiral from "./components/CursorSpiral";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,8 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body>
+      <CursorSpiral />         
         <Header />                        
-        <main className="pt-16">          
+        <main className="pt-16"> 
           {children}
         </main>
         <Footer />

@@ -1,6 +1,6 @@
 "use client";
 import Container from "./Container";
-
+import GridBackground from "./GridBackground";
 const CAREER_START_DATE = new Date("2021-05-17");
 
 function getExperienceDuration(startDate: Date): { years: number; months: number } {
@@ -32,24 +32,17 @@ export default function About() {
   const durationLabel = formatDuration(duration);
 
   return (
-    <section id="about" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25">
+    <section id="about" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25 bg-[#080B15]">
+      <GridBackground />
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Left: heading + paragraph */}
           <div>
             <h2 className="text-3xl md:text-[48px] font-bold text-text leading-tight">
                <span className="text-accent-dark">About</span> Me
             </h2>
 
             <p className="mt-6 text-muted leading-relaxed">
-              I am a Frontend Web Developer with over {durationLabel} of professional experience building responsive, high-performing websites and web applications.
-
-                My expertise includes WordPress development using Elementor, Divi, WPBakery, Advanced Custom Fields (ACF), and Gutenberg, along with modern frontend technologies such as React, Next.js, JavaScript, and Tailwind CSS. I focus on creating clean, user-friendly interfaces that deliver excellent user experiences across all devices.
-
-                Throughout my career at Fullstack HQ Inc., I have worked on a wide range of projects, from custom WordPress solutions to modern frontend implementations, helping businesses improve their online presence through performance optimization, SEO best practices, and scalable development solutions.
-
-                I am passionate about continuous learning, writing maintainable code, and transforming design concepts into fast, accessible, and engaging digital experiences.
-
+            Frontend Web Developer with {durationLabel} years of experience building responsive, high-performing websites — spanning WordPress (Elementor, ACF, Gutenberg), Shopify, and modern stacks like React, Next.js, and Tailwind CSS. I focus on clean UI, performance, and SEO to help businesses grow their online presence.
             </p>
           </div>
 

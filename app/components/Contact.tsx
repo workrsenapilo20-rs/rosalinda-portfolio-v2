@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Container from "./Container";
 import Link from "next/link";
-
+import GridBackground from "./GridBackground";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/maqzgzbr";
 
 export default function Contact() {
@@ -34,7 +34,8 @@ export default function Contact() {
     }
 
     return (
-        <section id="contact" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25">
+        <section id="contact" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25 bg-[#080B15]">
+            <GridBackground />
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center bg-surface border border-border rounded-lg px-8 py-14 max-w-6xl mx-auto">
                     <div>

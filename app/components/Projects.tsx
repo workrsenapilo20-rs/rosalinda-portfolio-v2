@@ -3,26 +3,8 @@ import { useRef } from "react";
 import Image from "next/image";
 import Container from "./Container";
 import Link from "next/link";
-
-type Project = {
-  id: string;
-  name: string;
-  image: string;
-  description: string;
-  link: string;
-};
-
-const PLACEHOLDER_PROJECTS: Project[] = [
-    { id: "1", name: "Susan Cox Foundation", image: "/projects/placeholder-1.jpg", description: "A nonprofit website redesign focused on accessibility and donor engagement.", link: "#" },
-    { id: "2", name: "SusanShares", image: "/projects/placeholder-2.jpg", description: "A community sharing platform built with custom WordPress functionality.", link: "#" },
-    { id: "3", name: "Andy Millet", image: "/projects/placeholder-3.jpg", description: "A personal portfolio site with smooth animations and a custom CMS.", link: "#" },
-    { id: "4", name: "Elect Anders", image: "/projects/placeholder-4.jpg", description: "A campaign website with real-time updates and responsive design.", link: "#" },
-    { id: "5", name: "Capitol Painting Company", image: "/projects/placeholder-5.jpg", description: "A local business site with online booking and service showcases.", link: "#" },
-    { id: "6", name: "Ubiquity", image: "/projects/placeholder-5.jpg", description: "A SaaS landing page with conversion-focused UI and animations.", link: "#" },
-    { id: "7", name: "Blackbough Swim", image: "/projects/placeholder-5.jpg", description: "An e-commerce storefront built on Shopify with custom theming.", link: "#" },
-    { id: "8", name: "Lemoine", image: "/projects/placeholder-5.jpg", description: "A corporate site rebuild with improved performance and SEO.", link: "#" },
-    { id: "9", name: "Sewer Inspector", image: "/projects/placeholder-5.jpg", description: "A service-based business site with lead capture forms.", link: "#" },
-];
+import { PROJECTS } from "../lib/projects";
+import GridBackground from "./GridBackground";
 
 export default function Projects() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -42,7 +24,8 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25">
+    <section id="projects" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25 bg-[#080B15]">
+      <GridBackground />
       <Container>
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-accent-dark text-3xl md:text-[48px] font-bold">
@@ -80,7 +63,7 @@ export default function Projects() {
         ref={trackRef}
         className="flex gap-6 overflow-x-auto pl-6 pr-6 md:pl-[max(1.5rem,calc((100vw-1440px)/2+1.5rem))] scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
-        {PLACEHOLDER_PROJECTS.map((project) => (
+        {PROJECTS.map((project) => (
           <Link
             key={project.id}
             href={project.link}
@@ -95,6 +78,18 @@ export default function Projects() {
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
+
+              {/* Tech stack badges */}
+              <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-1.5 z-10">
+                {project.tech.map((item) => (
+                  <span
+                    key={item}
+                    className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm text-white text-[11px] font-medium tracking-wide"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
 
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">

@@ -69,7 +69,7 @@
   --accent-dark:  hsl(var(--accent-h) var(--accent-s) 42%);
   --accent-soft:  hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.12);
   --accent-glow:  hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.28);
-
+ --accent-rgb: 31, 249, 249;
   --border: rgba(255, 255, 255, 0.07);
   --border-accent: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.28);
   --shadow: 0 20px 70px rgba(0, 0, 0, 0.24);
@@ -126,4 +126,26 @@ body {
 
 .animate-marquee-reverse:hover {
   animation-play-state: paused;
+}
+
+
+
+.grid-bg {
+  background-image: linear-gradient(rgba(var(--accent-rgb), 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.cursor-glow {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(var(--accent-rgb), 0.08) 0%,
+    rgba(var(--accent-rgb), 0.04) 30%,
+    rgba(var(--accent-rgb), 0.015) 55%,
+    rgba(var(--accent-rgb), 0) 75%
+  );
+  will-change: transform;
 }

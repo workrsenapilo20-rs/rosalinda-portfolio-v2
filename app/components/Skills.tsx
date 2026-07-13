@@ -2,14 +2,13 @@
 "use client";
 import Image from "next/image";
 import Container from "./Container";
-
+import GridBackground from "./GridBackground";
 type Skill = {
   name: string;
   src: string;
   invert?: boolean;
 };
 
-// Grouped by function — frontend, CMS/e-commerce, design/dev tools
 const SKILL_GROUPS: Skill[][] = [
   [
     { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -38,6 +37,9 @@ const SKILL_GROUPS: Skill[][] = [
     { name: "VS Code", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
     { name: "ClickUp", src: "/tools/icon-clickup.svg" },
     { name: "LocalWP", src: "/tools/icon-localwp.png" },
+    { name: "ChatGPT", src: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg", invert: true },
+    { name: "Claude", src: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/anthropic.svg", invert: true },
+    { name: "DeepSeek", src: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/deepseek.svg" },
   ],
 ];
 
@@ -47,10 +49,11 @@ function duplicateForLoop(skills: Skill[]) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25">
+    <section id="skills" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25 bg-[#080B15]">
+      <GridBackground />
       <Container>
         <h2 className="text-3xl md:text-[48px] font-bold text-text">
-          <span className="text-accent-dark">Tools</span> and <span className="text-accent-dark">Technologies</span> I work with
+          <span className="text-accent-dark">Tools</span> and <span className="text-accent-dark">Technologies</span> I Used
         </h2>
         <div className="mt-10 flex flex-col gap-6">
             {SKILL_GROUPS.map((group, groupIndex) => (
