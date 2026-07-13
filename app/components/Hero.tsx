@@ -109,7 +109,7 @@ export default function Hero() {
         <div className="relative flex justify-center md:justify-end max-w-min p-[0.8rem] border border-border rounded-lg cursor-pointer bg-surface-strong shadow-md hover:shadow-[0_0_60px_rgba(var(--accent-rgb),0.25)] transition-shadow duration-300"> 
             <div className="relative w-[280px] h-[360px] md:w-[500px] lg:w-[405px] xl:w-[500px] md:h-[600px] rounded-lg border border-border bg-surface-strong overflow-hidden">
               <Image
-                src="/hero-imagee.jpg"
+                src="/hero-imagee.JPG"
                 alt="Rosalinda Senapilo"
                 fill
                 priority
