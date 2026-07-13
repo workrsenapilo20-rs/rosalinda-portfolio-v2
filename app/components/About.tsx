@@ -47,7 +47,7 @@ export default function About() {
           </div>
 
           {/* Right: info card */}
-          <div className="rounded-lg border border-border bg-panel p-8 flex flex-col gap-6">
+          <div className="rounded-lg border border-border bg-panel p-8 flex flex-col gap-6 about-card">
             <div>
               <p className="text-accent text-xs font-bold tracking-[0.15em] uppercase mb-2">
                 Role
