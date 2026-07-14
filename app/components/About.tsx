@@ -1,57 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import {
+  CheckCircle2,
+  Briefcase,
+  Building2,
+  Code2,
+  Sparkles,
+} from "lucide-react";
 
 import Container from "./Container";
 import GridBackground from "./GridBackground";
 
-const CAREER_START_DATE = new Date("2021-05-17");
-
-function getExperienceDuration(startDate: Date): {
-  years: number;
-  months: number;
-} {
-  const now = new Date();
-
-  let years = now.getFullYear() - startDate.getFullYear();
-  let months = now.getMonth() - startDate.getMonth();
-
-  if (now.getDate() < startDate.getDate()) {
-    months -= 1;
-  }
-
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  return { years: Math.max(years, 0), months: Math.max(months, 0) };
-}
-
-function formatDuration({
-  years,
-  months,
-}: {
-  years: number;
-  months: number;
-}) {
-  return `${years} Year${years !== 1 ? "s" : ""}${
-    months ? ` ${months} Month${months !== 1 ? "s" : ""}` : ""
-  }`;
-}
-
 export default function About() {
-  const duration = getExperienceDuration(CAREER_START_DATE);
-  const durationLabel = formatDuration(duration);
-
   const highlights = [
-    "5+ years building responsive and high-performance websites",
-    "Custom WordPress development using Elementor, ACF & Gutenberg",
-    "Shopify theme customization with Liquid",
-    "Frontend development with React, Next.js & Tailwind CSS",
-    "Performance optimization, SEO & accessibility",
-    "Pixel-perfect implementation from Figma designs",
+    "Build responsive, high-performance websites for businesses and organizations.",
+    "Develop custom WordPress solutions using Elementor, ACF, Gutenberg, and custom themes.",
+    "Customize Shopify storefronts with Liquid and modern e-commerce experiences.",
+    "Create scalable frontend applications using React, Next.js, TypeScript, and Tailwind CSS.",
+    "Transform Figma designs into pixel-perfect, accessible, and responsive interfaces.",
+    "Optimize websites for performance, SEO, and Core Web Vitals.",
   ];
 
   return (
@@ -62,8 +30,11 @@ export default function About() {
       <GridBackground />
 
       <Container>
+        <h2 className="text-3xl md:text-[48px] font-bold leading-tight">
+            <span className="text-accent-dark">About</span>{" "}
+            <span className="text-white">Me</span>
+          </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -71,18 +42,17 @@ export default function About() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-[48px] font-bold leading-tight">
-              <span className="text-accent-dark">About</span>{" "}
-              <span className="text-white">Me</span>
-            </h2>
+
 
             <p className="mt-6 text-muted leading-relaxed">
-              I'm a <span className="text-white font-medium">Frontend Web Developer</span>{" "}
-              with <span className="text-accent">{durationLabel}</span> of
-              professional experience creating fast, modern, and scalable web
+              I'm a{" "}
+              <span className="text-white font-medium">
+                Frontend Web Developer
+              </span>{" "}
+              passionate about building modern, fast, and user-friendly digital
               experiences. I specialize in WordPress, Shopify, and modern
-              frontend technologies, delivering clean, responsive interfaces
-              with a strong focus on performance and user experience.
+              frontend technologies, helping businesses turn ideas into
+              responsive, scalable, and high-performing websites.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -93,7 +63,7 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
                     delay: index * 0.08,
-                    duration: 0.5,
+                    duration: 0.45,
                   }}
                   viewport={{ once: true }}
                   className="flex items-start gap-3"
@@ -103,65 +73,73 @@ export default function About() {
                     className="text-accent mt-1 flex-shrink-0"
                   />
 
-                  <span className="text-muted leading-relaxed">
-                    {item}
-                  </span>
+                  <span className="text-muted">{item}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right Card */}
+          {/* Right */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="rounded-xl border border-border bg-panel p-8 flex flex-col gap-8 about-card"
+            className="rounded-xl border border-border bg-panel p-8 flex flex-col gap-8"
           >
-            <div>
-              <p className="text-accent text-xs font-bold tracking-[0.18em] uppercase mb-2">
-                Role
-              </p>
-
-              <p className="text-white text-xl font-semibold">
-                Frontend Web Developer
-              </p>
+            <div className="flex items-start gap-4">
+              <Briefcase className="text-accent mt-1" size={22} />
+              <div>
+                <p className="text-accent text-xs font-bold uppercase tracking-[0.18em]">
+                  Role
+                </p>
+                <p className="text-white text-lg font-semibold">
+                  Frontend Web Developer
+                </p>
+              </div>
             </div>
 
-            <div>
-              <p className="text-accent text-xs font-bold tracking-[0.18em] uppercase mb-2">
-                Experience
-              </p>
-
-              <p className="text-white">
-                {durationLabel} at Fullstack HQ Inc.
-              </p>
+            <div className="flex items-start gap-4">
+              <Building2 className="text-accent mt-1" size={22} />
+              <div>
+                <p className="text-accent text-xs font-bold uppercase tracking-[0.18em]">
+                  Company
+                </p>
+                <p className="text-white">
+                  Fullstack HQ Inc.
+                </p>
+                <p className="text-muted text-sm">
+                  Since May 2021
+                </p>
+              </div>
             </div>
 
-            <div>
-              <p className="text-accent text-xs font-bold tracking-[0.18em] uppercase mb-2">
-                Primary Stack
-              </p>
-
-              <p className="text-muted leading-relaxed">
-                WordPress • Shopify • React • Next.js • Tailwind CSS •
-                TypeScript
-              </p>
+            <div className="flex items-start gap-4">
+              <Code2 className="text-accent mt-1" size={22} />
+              <div>
+                <p className="text-accent text-xs font-bold uppercase tracking-[0.18em]">
+                  Primary Stack
+                </p>
+                <p className="text-muted leading-relaxed">
+                  WordPress • Shopify • React • Next.js • Tailwind CSS •
+                  TypeScript
+                </p>
+              </div>
             </div>
 
-            <div>
-              <p className="text-accent text-xs font-bold tracking-[0.18em] uppercase mb-2">
-                Specialties
-              </p>
-
-              <p className="text-muted leading-relaxed">
-                Responsive UI • Custom Themes • Gutenberg Blocks • SEO •
-                Performance Optimization
-              </p>
+            <div className="flex items-start gap-4">
+              <Sparkles className="text-accent mt-1" size={22} />
+              <div>
+                <p className="text-accent text-xs font-bold uppercase tracking-[0.18em]">
+                  Focus
+                </p>
+                <p className="text-muted leading-relaxed">
+                  Responsive UI • Custom Themes • Gutenberg Blocks • SEO •
+                  Accessibility • Performance Optimization
+                </p>
+              </div>
             </div>
           </motion.div>
-
         </div>
       </Container>
     </section>
