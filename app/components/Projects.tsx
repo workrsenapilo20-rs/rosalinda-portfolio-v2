@@ -7,7 +7,7 @@ import { PROJECTS, type Project } from "../lib/projects";
 import GridBackground from "./GridBackground";
 import ProjectModal from "./ProjectModal";
 
-const SCROLL_SPEED = 0.6;
+const SCROLL_SPEED = 0.8;
 
 export default function Projects() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ export default function Projects() {
 
     manualScrollTimeoutRef.current = setTimeout(() => {
       isManualScrollRef.current = false;
-    }, 600);
+    }, 8000);
   }
 
   const tick = useCallback(() => {
