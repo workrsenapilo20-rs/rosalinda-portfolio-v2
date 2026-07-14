@@ -48,7 +48,7 @@ export default function ProjectModal({
         <button
           onClick={onClose}
           aria-label="Close preview"
-          className="absolute top-4 right-4 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm text-white transition-colors duration-200 hover:bg-black/80"
+          className="absolute top-4 right-4 z-10 flex items-center cursor-pointer justify-center w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm text-white transition-colors duration-200 hover:bg-black/80"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M18 6L6 18M6 6l12 12" />
@@ -93,18 +93,18 @@ export default function ProjectModal({
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-sm bg-accent text-btn-primary-text font-semibold text-sm transition-transform duration-200 hover:scale-105"
+                className="inline-flex items-center px-6 py-3 rounded-sm cursor-pointer bg-accent text-btn-primary-text font-semibold text-sm transition-transform duration-200 hover:scale-105"
               >
                 Visit Live Site
               </Link>
             ) : (
-              <span className="inline-flex items-center px-6 py-3 rounded-sm border border-border text-muted font-semibold text-sm">
+              <span className="inline-flex items-center px-6 py-3 rounded-sm cursor-pointer border border-border text-muted font-semibold text-sm">
                 Live link coming soon
               </span>
             )}
             <button
               onClick={onClose}
-              className="inline-flex items-center px-6 py-3 rounded-sm border border-border-accent text-text font-semibold text-sm transition-colors duration-200 hover:bg-accent-soft"
+              className="inline-flex items-center px-6 py-3 rounded-sm border cursor-pointer border-border-accent text-text font-semibold text-sm transition-colors duration-200 hover:bg-accent-soft"
             >
               Close
             </button>

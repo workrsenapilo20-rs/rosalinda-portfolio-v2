@@ -37,10 +37,13 @@ export default function Contact() {
         <section id="contact" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25 bg-[#080B15]">
             <GridBackground />
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center bg-surface border border-border rounded-lg px-8 py-14 max-w-6xl mx-auto">
+                <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center bg-surface border border-border shadow-accent-glow shadow rounded-lg px-8 py-14 max-w-6xl mx-auto">
                     <div>
+                         <p className="text-accent text-sm font-bold tracking-[0.15em] uppercase mb-4">
+                            Get in Touch
+                        </p>
                         <h2 className="text-3xl md:text-[48px] font-bold text-text">
-                            I Am Available For <span className="text-accent-dark">Freelance</span>.
+                            I Am Available For <span className="text-accent">Freelance</span>.
                         </h2>
                         <p className="text-muted mt-4 text-base md:text-base leading-relaxed">
                             I&apos;m always open to discussing new projects, creative ideas, and opportunities to bring your vision to life. Feel free to get in touch.

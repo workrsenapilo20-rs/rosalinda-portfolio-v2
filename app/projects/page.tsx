@@ -25,7 +25,7 @@ export default function ProjectsPage() {
           </Link>
 
           <h1 className="mt-6 text-4xl md:text-[56px] font-bold text-text leading-tight">
-            All <span className="text-accent-dark">Projects</span>
+            All <span className="text-accent">Projects</span>
           </h1>
           <p className="mt-4 text-muted text-base md:text-lg max-w-2xl">
             A full look at the sites and apps I&apos;ve built — from WordPress
@@ -47,6 +47,7 @@ export default function ProjectsPage() {
                   src={project.image}
                   alt={project.name}
                   fill
+                  sizes="(max-width: 640px) 78vw, (max-width: 768px) 45vw, (max-width: 1024px) 38vw, 40vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
 

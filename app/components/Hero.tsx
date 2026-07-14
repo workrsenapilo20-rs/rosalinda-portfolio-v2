@@ -106,8 +106,8 @@ export default function Hero() {
           </div>
 
           {/* Right: image */}
-        <div className="relative flex justify-center md:justify-end max-w-min p-[0.8rem] border border-border rounded-lg cursor-pointer bg-surface-strong shadow-md hover:shadow-[0_0_60px_rgba(var(--accent-rgb),0.25)] transition-shadow duration-300"> 
-            <div className="relative w-[280px] h-[360px] md:w-[500px] lg:w-[405px] xl:w-[500px] md:h-[600px] rounded-lg border border-border bg-surface-strong overflow-hidden">
+        <div className="relative flex justify-center md:justify-end max-w-min p-[0.8rem] border border-border rounded-lg cursor-pointer bg-surface shadow hover:shadow-[0_0_60px_rgba(var(--accent-rgb),0.25)] transition-shadow duration-300"> 
+            <div className="relative w-[280px] h-[360px] md:w-[500px] lg:w-[405px] xl:w-[500px] md:h-[600px] rounded-lg border border-border bg-surface overflow-hidden">
               <Image
                 src="/hero-imagee.JPG"
                 alt="Rosalinda Senapilo"
@@ -118,11 +118,11 @@ export default function Hero() {
             </div>
 
             {/* Experience badge */}
-            <div className="absolute top-1/2 -left-6 md:-left-10 -translate-y-1/2 z-10 flex flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-accent text-btn-primary-text shadow-[0_10px_30px_rgba(0,0,0,0.35)] border-4 border-surface-strong">
+            <div className="absolute top-1/2 -left-6 md:-left-10 -translate-y-1/2 z-10 flex flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-accent-soft text-accent-dark shadow-[0_10px_30px_rgba(0,0,0,0.35)] border-4 border-surface-strong">
               <span className="text-2xl md:text-3xl font-bold leading-none">
                 {experienceYears}+
               </span>
-              <span className="text-[10px] md:text-xs font-semibold tracking-wide uppercase mt-1 text-center leading-tight px-2">
+              <span className="text-[10px] font-semibold tracking-wide uppercase mt-1 text-center leading-tight px-2 font-sans">
                 Years<br />Experience
               </span>
             </div>

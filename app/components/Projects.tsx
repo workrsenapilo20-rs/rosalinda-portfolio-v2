@@ -78,7 +78,7 @@ export default function Projects() {
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-3xl md:text-[48px] font-bold leading-tight">
             <span className=" text-white">Featured</span>{" "}
-            <span className="text-accent-dark">Projects</span>
+            <span className="text-accent">Projects</span>
           </h2>
           <div className="hidden md:flex items-center gap-3">
             <button

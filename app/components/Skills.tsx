@@ -53,7 +53,7 @@ export default function Skills() {
       <GridBackground />
       <Container>
         <h2 className="text-3xl md:text-[48px] font-bold text-text">
-          <span className="text-accent-dark">Tools</span> and <span className="text-accent-dark">Technologies</span> I Used
+          <span className="text-accent">Tools</span> and <span className="text-accent">Technologies</span> I Used
         </h2>
         <div className="mt-10 flex flex-col gap-6">
             {SKILL_GROUPS.map((group, groupIndex) => (
@@ -69,7 +69,7 @@ export default function Skills() {
                 {duplicateForLoop(group).map((skill, i) => (
                     <div
                     key={`${skill.name}-${i}`}
-                    className="flex  items-center justify-center gap-2 shrink-0 w-[250px] rounded-md border border-border bg-panel p-5 hover:bg-surface-strong hover:border-accent-dark transition-colors duration-200 group cursor-pointer"
+                    className="relative z-20 flex  items-center justify-center gap-2 shrink-0 w-[250px] rounded-md border border-border bg-surface p-5 hover:bg-surface-strong hover:border-accent-dark transition-colors duration-200 group cursor-pointer"
                     >
                     <Image
                         src={skill.src}
