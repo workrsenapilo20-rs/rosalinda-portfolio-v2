@@ -134,11 +134,20 @@ export default function Hero() {
               </div>
               <div className="w-px h-10 bg-border" />
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-text">
-                  100%
+                <p className="text-3xl md:text-4xl font-bold text-text flex items-center gap-1.5">
+                  4.8
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="text-accent"
+                  >
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                  </svg>
                 </p>
                 <p className="text-muted text-xs md:text-sm tracking-wide mt-1">
-                  Client Satisfaction
+                  Client Rating
                 </p>
               </div>
             </div>
