@@ -7,7 +7,7 @@ import { PROJECTS, type Project } from "../lib/projects";
 import GridBackground from "./GridBackground";
 import ProjectModal from "./ProjectModal";
 
-const SCROLL_SPEED = 2.5; 
+const SCROLL_SPEED = 2; 
 const MANUAL_PAUSE_MS = 1500; 
 
 export default function Projects() {
