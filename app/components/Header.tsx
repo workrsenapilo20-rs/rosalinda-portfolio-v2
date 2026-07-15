@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Container from "./Container";
 import Image from "next/image";
 import { Download } from 'lucide-react';
 
@@ -11,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 w-full bg-surface backdrop-blur-sm shadow-sm z-50">
-      <Container>
+      <div className="max-w-8xl mx-auto w-full px-4 md:px-8 lg:px-16">
         <div className="flex items-center justify-between h-20">
 
           <Link href="/">
@@ -54,7 +53,7 @@ export default function Header() {
             <span className={`block w-6 h-0.5 bg-text transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </div>
-      </Container>
+      </div>
 
       {/* Mobile Menu */}
       {menuOpen && (

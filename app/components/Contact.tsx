@@ -37,7 +37,7 @@ export default function Contact() {
         <section id="contact" className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25 bg-[#080B15]">
             <GridBackground />
             <Container>
-                <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center bg-surface border border-border shadow-accent-glow shadow rounded-lg px-8 py-14 max-w-6xl mx-auto">
+                <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center bg-surface border border-border shadow-accent-glow shadow rounded-lg px-8 py-14 max-w-5xl mx-auto">
                     <div>
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-accent bg-accent-soft mb-5">
                         <span className="relative flex h-2 w-2">
