@@ -72,7 +72,7 @@ export default function Hero() {
       <GridBackground />
       <FloatingCodeSymbols />
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center lg:justify-items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center lg:justify-items-baseline">
           {/* Left: text content */}
           <div>
             {/* Availability badge */}
