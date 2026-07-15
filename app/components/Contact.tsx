@@ -39,9 +39,15 @@ export default function Contact() {
             <Container>
                 <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center bg-surface border border-border shadow-accent-glow shadow rounded-lg px-8 py-14 max-w-6xl mx-auto">
                     <div>
-                         <p className="text-accent text-sm font-bold tracking-[0.15em] uppercase mb-4">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-accent bg-accent-soft mb-5">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                        </span>
+                        <span className="text-accent text-xs font-semibold tracking-wide">
                             Get in Touch
-                        </p>
+                        </span>
+                        </div>
                         <h2 className="text-3xl md:text-[48px] font-bold text-text">
                             I Am Available For <span className="text-accent">Freelance</span>.
                         </h2>

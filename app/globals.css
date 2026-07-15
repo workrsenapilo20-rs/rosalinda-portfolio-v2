@@ -196,3 +196,30 @@ body {
     transform: scale(1) translateY(0);
   }
 }
+
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-22px);
+  }
+}
+
+.floating-symbol {
+  animation-name: float-y;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes border-run {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.running-border-rect {
+  stroke-dasharray: 22 78; /* 22% visible "beam", 78% gap */
+  animation: border-run 3s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(var(--accent-rgb), 0.8));
+}

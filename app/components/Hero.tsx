@@ -1,10 +1,11 @@
-// components/Hero.jsx
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
 import GridBackground from "./GridBackground";
+import FloatingCodeSymbols from "./FloatingCodeSymbols";
+import { PROJECTS } from "../lib/projects";
 
 const TYPING_WORDS = ["Rosalinda"];
 const TYPE_SPEED = 120;
@@ -64,18 +65,26 @@ function getExperienceYears(startDate: Date): number {
 export default function Hero() {
   const typedName = useTypingEffect(TYPING_WORDS);
   const experienceYears = getExperienceYears(CAREER_START_DATE);
+  const projectCount = PROJECTS.length;
 
   return (
     <section className="relative overflow-hidden pt-20 pb-20 md:pt-25 md:pb-25 bg-[#080B15]">
       <GridBackground />
+      <FloatingCodeSymbols />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center lg:justify-items-end">
           {/* Left: text content */}
           <div>
-            <p className="text-accent text-sm font-bold tracking-[0.15em] uppercase mb-4">
-              Frontend Web Developer
-            </p>
-
+            {/* Availability badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-accent bg-accent-soft mb-5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
+              <span className="text-accent text-xs font-semibold tracking-wide">
+                Frontend Web Developer
+              </span>
+            </div>
             <h1 className="text-5xl md:text-[85px] font-bold text-text leading-tight">
               Hi, I&apos;m
             </h1>
@@ -84,7 +93,7 @@ export default function Hero() {
               <span className="inline-block w-[3px] h-[0.9em] bg-text ml-1 align-middle animate-pulse" />
             </h1>
 
-            <p className="mt-6 text-muted text-base md:text-lg leading-relaxed">
+            <p className="mt-6 text-muted text-base md:text-lg leading-relaxed max-w-md">
               I build modern, responsive web experiences with clean code,
               polished interfaces, and a human-first design approach.
             </p>
@@ -103,32 +112,71 @@ export default function Hero() {
                 Get in Touch
               </Link>
             </div>
+
+            {/* Stats row — fills the empty space below the CTAs */}
+            <div className="mt-12 flex items-center gap-8 md:gap-12">
+              <div>
+                <p className="text-3xl md:text-4xl font-bold text-text">
+                  {experienceYears}+
+                </p>
+                <p className="text-muted text-xs md:text-sm tracking-wide mt-1">
+                  Years Experience
+                </p>
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div>
+                <p className="text-3xl md:text-4xl font-bold text-text">
+                  {projectCount}+
+                </p>
+                <p className="text-muted text-xs md:text-sm tracking-wide mt-1">
+                  Projects Delivered
+                </p>
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div>
+                <p className="text-3xl md:text-4xl font-bold text-text">
+                  100%
+                </p>
+                <p className="text-muted text-xs md:text-sm tracking-wide mt-1">
+                  Client Satisfaction
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Right: image */}
-        <div className="relative flex justify-center md:justify-end max-w-min p-[0.8rem] border border-border rounded-lg cursor-pointer bg-surface shadow hover:shadow-[0_0_60px_rgba(var(--accent-rgb),0.25)] transition-shadow duration-300"> 
-            <div className="relative w-[280px] h-[360px] md:w-[500px] lg:w-[405px] xl:w-[500px] md:h-[600px] rounded-lg border border-border bg-surface overflow-hidden">
-              <Image
-                src="/hero-imagee.JPG"
-                alt="Rosalinda Senapilo"
-                fill
-                priority
-                className="object-cover"
-              />
+          <div className="relative flex justify-center md:justify-end max-w-min">
+            {/* Glow anchor behind the image */}
+            <div className="absolute inset-0 -z-10 flex items-center justify-center">
+              <div className="w-[280px] h-[280px] md:w-[420px] md:h-[420px] rounded-full bg-accent opacity-[0.15] blur-[100px]" />
             </div>
 
-            {/* Experience badge */}
-            <div className="absolute top-1/2 -left-6 md:-left-10 -translate-y-1/2 z-10 flex flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-accent-soft text-accent-dark shadow-[0_10px_30px_rgba(0,0,0,0.35)] border-4 border-surface-strong">
-              <span className="text-2xl md:text-3xl font-bold leading-none">
-                {experienceYears}+
-              </span>
-              <span className="text-[10px] font-semibold tracking-wide uppercase mt-1 text-center leading-tight px-2 font-sans">
-                Years<br />Experience
-              </span>
+            <div className="relative flex justify-center md:justify-end max-w-min p-[0.8rem] border border-border rounded-lg cursor-pointer bg-surface shadow hover:shadow-[0_0_60px_rgba(var(--accent-rgb),0.25)] transition-shadow duration-300">
+              <div className="relative w-[280px] h-[360px] md:w-[500px] lg:w-[405px] xl:w-[500px] md:h-[600px] rounded-lg border border-border bg-surface overflow-hidden">
+                <Image
+                  src="/hero-imagee.JPG"
+                  alt="Rosalinda Senapilo"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+                
+              </div>
+
+              {/* Experience badge */}
+              <div className="absolute top-1/2 -left-6 md:-left-10 -translate-y-1/2 z-10 flex flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-accent-soft text-accent-dark shadow-[0_10px_30px_rgba(0,0,0,0.35)] border-4 border-surface-strong">
+                <span className="text-2xl md:text-3xl font-bold leading-none">
+                  {experienceYears}+
+                </span>
+                <span className="text-[10px] font-semibold tracking-wide uppercase mt-1 text-center leading-tight px-2 font-sans">
+                  Years<br />Experience
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </Container>
+      
     </section>
   );
 }

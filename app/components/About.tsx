@@ -31,8 +31,8 @@ export default function About() {
 
       <Container>
           <h2 className="text-3xl md:text-[48px] font-bold leading-tight">
-            <span className="text-accent">About</span>{" "}
-            <span className="text-white">Me</span>
+             <span className="text-accent">About</span>{" "}
+            <span className="text-white">Me</span> 
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mt-8 ">
             {/* Left */}
